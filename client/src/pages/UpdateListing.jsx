@@ -254,7 +254,7 @@ export default function CreateListing() {
                 onChange={handleChange}
                 checked={formData.offer}
               />
-              <span>Offer</span>
+              <span>Special Offer</span>
             </div>
           </div>
           <div className='flex flex-wrap gap-6'>
@@ -296,9 +296,9 @@ export default function CreateListing() {
                 value={formData.regularPrice}
               />
               <div className='flex flex-col items-center'>
-                <p>Regular price</p>
+                <p>Regular price in GH₵</p>
                 {formData.type === 'rent' && (
-                  <span className='text-xs'>($ / month)</span>
+                  <span className='text-xs'>(Per month)</span>
                 )}
               </div>
             </div>
@@ -317,7 +317,7 @@ export default function CreateListing() {
                 <div className='flex flex-col items-center'>
                   <p>Discounted price</p>
                   {formData.type === 'rent' && (
-                    <span className='text-xs'>($ / month)</span>
+                    <span className='text-xs'>(GH₵ / month)</span>
                   )}
                 </div>
               </div>
