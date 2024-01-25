@@ -30,6 +30,8 @@ export default function Profile() {
   const [userListings, setUserListings] = useState([]);
   const dispatch = useDispatch();
 
+  const targetUserId = import.meta.env.VITE_PROFILE_ID;
+
   // firebase storage
   // allow read;
   // allow write: if
@@ -220,9 +222,11 @@ export default function Profile() {
           {loading ? 'Loading...' : 'Update'}
         </button>
         <Link
-          className='bg-green-700 text-white p-3 rounded-lg uppercase text-center hover:opacity-95'
-          to={'/create-listing'}
-        >
+        className={`bg-green-700 text-white p-3 rounded-lg uppercase text-center hover:opacity-95 ${
+          currentUser?._id === targetUserId ? '' : 'hidden'
+        }`}
+        to={'/create-listing'}
+      >
           Create Listing
         </Link>
       </form>
@@ -242,7 +246,12 @@ export default function Profile() {
       <p className='text-green-700 mt-5'>
         {updateSuccess ? 'User is updated successfully!' : ''}
       </p>
-      <button onClick={handleShowListings} className='text-green-700 w-full'>
+      <button
+        onClick={handleShowListings}
+        className={`text-green-700 w-full ${
+          currentUser?._id === targetUserId ? '' : 'hidden'
+        }`}
+      >
         Show Listings
       </button>
       <p className='text-red-700 mt-5'>
