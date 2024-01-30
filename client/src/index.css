@@ -5,3 +5,9 @@
 body{
     background-color: rgb(238, 236, 233);
 }
+
+@layer base {
+    html {
+      font-family: "Proxima Nova", system-ui, sans-serif;
+    }
+  }

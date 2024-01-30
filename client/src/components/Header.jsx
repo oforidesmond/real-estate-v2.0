@@ -1,4 +1,4 @@
-import { FaSearch } from 'react-icons/fa';
+import { FaSearch, FaHome } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
@@ -24,34 +24,32 @@ export default function Header() {
     }
   }, [location.search]);
   return (
-    <header className='bg-slate-200 shadow-md'>
+    <header className='bg-white shadow-md'>
       <div className='flex justify-between items-center max-w-6xl mx-auto p-3'>
         <Link to='/'>
-        <img src={logo} alt='estate' className='w-20 max-w-xs h-auto' />
+        <img src={logo} alt='estate' className='w-16 max-w-16 h-auto' />
         </Link>
         <form
           onSubmit={handleSubmit}
-          className='bg-slate-100 p-3 rounded-lg flex items-center'
+          className='bg-slate-200 p-3 rounded-lg flex items-center'
         >
           <input
             type='text'
-            placeholder='Search...'
-            className='bg-transparent focus:outline-none w-24 sm:w-64'
+            placeholder='Search address...'
+            className='bg-transparent focus:outline-none w-24 sm:w-64 font-light text-sm'
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
           <button>
-            <FaSearch className='text-slate-600' />
+            <FaSearch className='text-brown-main' />
           </button>
         </form>
         <ul className='flex gap-5'>
           <Link to='/'>
-            <li className='hidden sm:inline text-slate-700 hover:underline'>
-              Home
-            </li>
+            <FaHome className='hidden sm:inline mb-1 text-xl text-brown-main' />
           </Link>
           <Link to='/about'>
-            <li className='hidden sm:inline text-slate-700 hover:underline'>
+            <li className='sm:inline hover:text-gray-200 '>
               About
             </li>
           </Link>
@@ -63,7 +61,7 @@ export default function Header() {
                 alt='profile'
               />
             ) : (
-              <li className=' text-slate-700 hover:underline'> Sign in</li>
+              <li className=' text-slate-700 hover:text-gray-200'> Sign In</li>
             )}
           </Link>
         </ul>
