@@ -129,7 +129,7 @@ export default function Search() {
   };
   return (
     <div className='flex flex-col md:flex-row'>
-      <div className='p-7  border-b-2 md:border-r-2 md:min-h-screen'>
+      <div className='p-7  -b-2 md:-r-2 md:min-h-screen'>
         <form onSubmit={handleSubmit} className='flex flex-col gap-8'>
           <div className='flex items-center gap-2'>
             <label className='whitespace-nowrap font-semibold'>
@@ -139,7 +139,7 @@ export default function Search() {
               type='text'
               id='searchTerm'
               placeholder='Search...'
-              className='border rounded-lg p-3 w-full'
+              className=' rounded-lg p-3 w-full'
               value={sidebardata.searchTerm}
               onChange={handleChange}
             />
@@ -216,7 +216,7 @@ export default function Search() {
               onChange={handleChange}
               defaultValue={'created_at_desc'}
               id='sort_order'
-              className='border rounded-lg p-3'
+              className=' rounded-lg p-3'
             >
               <option value='regularPrice_desc'>Price high to low</option>
               <option value='regularPrice_asc'>Price low to hight</option>
@@ -230,7 +230,7 @@ export default function Search() {
         </form>
       </div>
       <div className='flex-1'>
-        <h1 className='text-3xl font-semibold border-b p-3 text-slate-700 mt-5'>
+        <h1 className='text-3xl font-semibold -b p-3 text-slate-700 mt-5'>
           Listing results:
         </h1>
         <div className='p-7 flex flex-wrap gap-4'>

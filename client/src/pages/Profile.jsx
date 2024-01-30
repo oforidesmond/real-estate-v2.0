@@ -181,7 +181,7 @@ export default function Profile() {
         />
         <p className='text-sm self-center'>
           {fileUploadError ? (
-            <span className='text-red-700'>
+            <span className='text-red-900'>
               Error Image upload (image must be less than 2 mb)
             </span>
           ) : filePerc > 0 && filePerc < 100 ? (
@@ -197,7 +197,7 @@ export default function Profile() {
           placeholder='username'
           defaultValue={currentUser.username}
           id='username'
-          className='border p-3 rounded-lg'
+          className=' Color p-3 rounded-lg'
           onChange={handleChange}
         />
         <input
@@ -205,7 +205,7 @@ export default function Profile() {
           placeholder='email'
           id='email'
           defaultValue={currentUser.email}
-          className='border p-3 rounded-lg'
+          className=' p-3 rounded-lg'
           onChange={handleChange}
         />
         <input
@@ -213,7 +213,7 @@ export default function Profile() {
           placeholder='password'
           onChange={handleChange}
           id='password'
-          className='border p-3 rounded-lg'
+          className=' p-3 rounded-lg'
         />
         <button
           disabled={loading}
@@ -233,16 +233,16 @@ export default function Profile() {
       <div className='flex justify-between mt-5'>
         <span
           onClick={handleDeleteUser}
-          className='text-red-700 cursor-pointer'
+          className='text-red-900 cursor-pointer'
         >
           Delete account
         </span>
-        <span onClick={handleSignOut} className='text-red-700 cursor-pointer'>
+        <span onClick={handleSignOut} className='text-red-900 cursor-pointer'>
           Sign out
         </span>
       </div>
 
-      <p className='text-red-700 mt-5'>{error ? error : ''}</p>
+      <p className='text-red-900 mt-5'>{error ? error : ''}</p>
       <p className='text-green-700 mt-5'>
         {updateSuccess ? 'User is updated successfully!' : ''}
       </p>
@@ -254,7 +254,7 @@ export default function Profile() {
       >
         Show Listings
       </button>
-      <p className='text-red-700 mt-5'>
+      <p className='text-red-900 mt-5'>
         {showListingsError ? 'Error showing listings' : ''}
       </p>
 
@@ -266,7 +266,7 @@ export default function Profile() {
           {userListings.map((listing) => (
             <div
               key={listing._id}
-              className='border rounded-lg p-3 flex justify-between items-center gap-4'
+              className=' rounded-lg p-3 flex justify-between items-center gap-4'
             >
               <Link to={`/listing/${listing._id}`}>
                 <img
@@ -285,7 +285,7 @@ export default function Profile() {
               <div className='flex flex-col item-center'>
                 <button
                   onClick={() => handleListingDelete(listing._id)}
-                  className='text-red-700 uppercase'
+                  className='text-red-900 uppercase'
                 >
                   Delete
                 </button>

@@ -49,14 +49,14 @@ export default function SignIn() {
         <input
           type='text'
           placeholder='username'
-          className='border p-3 rounded-lg'
+          className=' p-3 rounded-lg'
           id='username'
           onChange={handleChange}
         />
         <input
           type='password'
           placeholder='password'
-          className='border p-3 rounded-lg'
+          className=' p-3 rounded-lg'
           id='password'
           onChange={handleChange}
         />
@@ -75,7 +75,7 @@ export default function SignIn() {
           <span className='text-blue-700'>Sign up</span>
         </Link>
       </div>
-      {error && <p className='text-red-500 mt-5'>{error}</p>}
+      {error && <p className='text-red-900 mt-5'>{error}</p>}
     </div>
   );
 }
